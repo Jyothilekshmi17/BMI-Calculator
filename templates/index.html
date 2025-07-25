@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Health Metrics Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+  <div class="logo">
+    <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#ffffff" stroke-width="8"/>
+      <path d="M30 70 L50 30 L70 70" fill="none" stroke="#ffffff" stroke-width="8"/>
+      <circle cx="50" cy="50" r="10" fill="#ffffff"/>
+    </svg>
+    <span class="logo-text">HealthCalc</span>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="form-box">
+      <h2>Health Metrics Form</h2>
+      <form id="healthForm">
+        <label>Age:
+          <input type="number" id="age" required />
+        </label>
+        <label>Gender:
+          <select id="gender">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+          </select>
+        </label>
+        <label>Height (cm):
+          <input type="number" id="height" required />
+        </label>
+        <label>Weight (kg):
+          <input type="number" id="weight" required />
+        </label>
+        <button type="submit">Calculate</button>
+      </form>
+    </div>
+
+    <div id="results" class="results-container"></div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
